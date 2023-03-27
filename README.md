@@ -1,4 +1,4 @@
-# TestVue
+# Weezie Challenge
 
 This is a challenge project for Weezie
 
