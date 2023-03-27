@@ -27,6 +27,3 @@ npm run dev
 ```sh
 npm run build
 ```
-#� �W�e�e�z�i�e�-�c�h�a�l�l�e�n�g�e�
-�
-�
