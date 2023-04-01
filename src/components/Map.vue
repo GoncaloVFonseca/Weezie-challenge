@@ -48,7 +48,7 @@
 
 <script>
 import hereIcon from ".././assets/hereIcon.png";
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 export default {
   props: ['data'],
   setup(props) {
@@ -66,13 +66,12 @@ export default {
       { coordinate: [-8.413480716386532, 41.07446942725651] },
       { coordinate: [-8.402244138449017, 41.06917280710447] },
     ]);
-    const coordinate3 = ref({})
+    const coordinate3 = ref(props.data)
     const geoLocChange = (loc) => {
       view.value.fit([loc[0], loc[1], loc[0], loc[1]], { maxZoom: 15 });
       console.log(loc);
     };
-    coordinate3.value = props.data;
-    console.log(coordinate3);
+    console.log('ola6')
     return {
       center,
       projection,
@@ -87,6 +86,7 @@ export default {
       coordinate,
       coordinate2,
       coordinate3,
+      props,
     };
   },
 };
