@@ -19,6 +19,7 @@ import { ref } from "vue";
 export default {
   props: ["data"],
   setup(props) {
+    console.log('ola')
     const list = ref(props.data);
     console.log(list);
     return {
