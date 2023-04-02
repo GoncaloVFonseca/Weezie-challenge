@@ -1,6 +1,6 @@
 # Weezie Challenge
 
-This is a challenge project for Weezie
+This is a challenge project for Weezie. 
 Node version used: 18.15.0
 
 ## Recommended IDE Setup
