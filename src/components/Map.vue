@@ -3,7 +3,7 @@ import hereIcon from ".././assets/hereIcon.png";
 import { ref, onBeforeMount, watch } from "vue";
 import axios from "axios";
 
-const center = ref([40, 40]);
+const center = ref([0, 0]);
 const projection = ref("EPSG:4326");
 const loading = ref(true);
 const APIKEY = ref("AIzaSyDkbf5MsXZ7eUqxFouSc0yylfOAjOHfgi4");
@@ -20,11 +20,9 @@ const coordinate3 = ref(newVar);
 const geoLocChange = (loc) => {
   view.value.fit([loc[0], loc[1], loc[0], loc[1]], { maxZoom: 15 });
   locationCoord.value = loc;
-  console.log(loc);
 };
 
 function changeCenter(coord) {
-  console.log(coord)
   view.value.fit([coord[0], coord[1], coord[0], coord[1]], { maxZoom: 20 });
 }
 
@@ -36,7 +34,6 @@ watch(locationCoord, async () => {
     `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${locationCoord.value[1]}%2C${locationCoord.value[0]}&radius=1500&key=${APIKEY.value}`
   );
   result.value = res.data;
-  console.log(result.value);
   newVar.value = result.value.results.map((item) => ({
     coordinates: [item.geometry.location.lng, item.geometry.location.lat],
     name: item.name,
@@ -44,7 +41,6 @@ watch(locationCoord, async () => {
     vicinity: item.vicinity,
     rating: item.rating || 5,
   }));
-  console.log(newVar.value);
   loading.value = false;
 });
 
