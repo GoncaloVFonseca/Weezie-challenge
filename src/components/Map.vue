@@ -31,12 +31,6 @@
                 <ol-style-icon :src="hereIcon" :scale="0.8"></ol-style-icon>
               </ol-style>
             </ol-feature>
-            <!-- <ol-feature ref="positionFeature">
-              <ol-geom-point :coordinates="coordinate2"></ol-geom-point>
-              <ol-style>
-                <ol-style-icon :src="hereIcon" :scale="0.8"></ol-style-icon>
-              </ol-style>
-            </ol-feature> -->
           </ol-source-vector>
         </ol-vector-layer>
       </template>
@@ -48,7 +42,7 @@
 
 <script>
 import hereIcon from ".././assets/hereIcon.png";
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 export default {
   props: ['data'],
   setup(props) {
@@ -93,7 +87,7 @@ export default {
 
 <style>
 .map {
-  height: 500px;
+  height: 100%;
   width: 1200px;
 }
 </style>

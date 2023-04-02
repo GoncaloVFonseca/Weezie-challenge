@@ -17,10 +17,15 @@ onBeforeMount(async () => {
     `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.06497599599926%2C-8.395962703660226&radius=1500&key=${APIKEY.value}`
   );
   result.value = res.data;
+  console.log(result.value)
   newVar.value = result.value.results.map((item) => ({
     coordinates: [item.geometry.location.lng, item.geometry.location.lat],
     name: item.name,
+    businessStatus: item.business_status || "PLACE",
+    vicinity: item.vicinity,
+    rating: item.rating || 5,
   }));
+  console.log(newVar.value)
   loading.value = false
 });
 </script>
