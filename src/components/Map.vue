@@ -85,7 +85,7 @@ onBeforeMount(async () => {
                     :coordinates="coordinate3.coordinates"
                   ></ol-geom-point>
                   <ol-style>
-                    <ol-style-icon :src="hereIcon" :scale="0.8"></ol-style-icon>
+                    <ol-style-icon :src="hereIcon" :scale="0.1"></ol-style-icon>
                   </ol-style>
                 </ol-feature>
               </ol-source-vector>
