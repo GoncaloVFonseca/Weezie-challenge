@@ -71,7 +71,6 @@ export default {
       view.value.fit([loc[0], loc[1], loc[0], loc[1]], { maxZoom: 15 });
       console.log(loc);
     };
-    console.log('ola6')
     return {
       center,
       projection,
